@@ -37,6 +37,6 @@ jobs:
           key: ${{ secrets.SERVER_PRIVATE_KEY }}
           script: |
             docker pull ${{ secrets.DOCKER_USERNAME }}/dockerized_service:latest
-            docker stop node-service || true
-            docker rm node-service || true
-            docker run -d --name node-service -p 3000:3000 --env-file /path/to/remote/.env ${{ secrets.DOCKER_USERNAME }}/dockerized_service:latest
+            docker stop dockerized_service || true
+            docker rm dockerized_service || true
+            docker run -d --name dockerized_service -p 3000:3000 --env-file /path/to/remote/.env ${{ secrets.DOCKER_USERNAME }}/dockerized_service:latest
