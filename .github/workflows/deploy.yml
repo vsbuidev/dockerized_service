@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-       - name: Copy .env file to remote server
+      - name: Copy .env file to remote server
         uses: appleboy/scp-action@v0.1.0
         with:
           host: ${{ secrets.HOST }}
