@@ -172,6 +172,6 @@ This project demonstrates deploying a Node.js service using Docker, an EC2 insta
 
 ### Screenshot
 
-## ![screenshot](https://github.com/vsbuidev/dockerized-service/screenshot.png)
+## ![screenshot](/screenshot.png)
 
 This project is part of [vsbuidev's Roadmap](https://roadmap.sh/projects/dockerized-service-deployment) DevOps projects.
