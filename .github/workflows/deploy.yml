@@ -13,15 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: Copy .env file to remote server
-      #   uses: appleboy/scp-action@v0.1.0
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     source: .env
-      #     target: ~/secrets_node/.env
-
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:

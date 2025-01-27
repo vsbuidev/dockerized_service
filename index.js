@@ -20,7 +20,7 @@ const auth = (req, res, next) => {
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Hello, world!");
+  res.send("This page is deployed in remote server using docker.!");
 });
 
 app.get("/secret", auth, (req, res) => {
