@@ -13,6 +13,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+       - name: Copy .env file to remote server
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: .env
+          target: ~/secrets_node/.env
+
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:
@@ -39,4 +48,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/dockerized_service:latest
             docker stop dockerized_service || true
             docker rm dockerized_service || true
-            docker run -d --name dockerized_service -p 3000:3000 --env-file /path/to/remote/.env ${{ secrets.DOCKER_USERNAME }}/dockerized_service:latest
+            docker run -d --name dockerized_service -p 3000:3000 --env-file ~/secrets_node/.env ${{ secrets.DOCKER_USERNAME }}/dockerized_service:latest
